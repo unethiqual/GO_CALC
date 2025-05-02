@@ -164,7 +164,7 @@ const file_calculation_proto_rawDesc = "" +
 	"\x06result\x18\x02 \x01(\x02R\x06result\x12\x14\n" +
 	"\x05error\x18\x03 \x01(\tR\x05error2Q\n" +
 	"\fOrchestrator\x12A\n" +
-	"\tCalculate\x12\x18.calculate.AgentResponse\x1a\x16.calculate.TaskRequest(\x010\x01B#Z!github.com/vedsatt/calc_prl/protob\x06proto3"
+	"\tCalculate\x12\x18.calculate.AgentResponse\x1a\x16.calculate.TaskRequest(\x010\x01B#Z!github.com/unethiqual/GO_CALC/protob\x06proto3"
 
 var (
 	file_calculation_proto_rawDescOnce sync.Once

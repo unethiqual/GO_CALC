@@ -8,8 +8,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/vedsatt/calc_prl/internal/config"
-	"github.com/vedsatt/calc_prl/internal/models"
+	"github.com/unethiqual/GO_CALC/internal/config"
+	"github.com/unethiqual/GO_CALC/internal/models"
 )
 
 // определяем пакетную переменную для базового URL

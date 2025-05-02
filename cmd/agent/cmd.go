@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/vedsatt/calc_prl/internal/agent"
-	"github.com/vedsatt/calc_prl/internal/config"
+	"github.com/unethiqual/GO_CALC/internal/agent"
+	"github.com/unethiqual/GO_CALC/internal/config"
 )
 
 func main() {

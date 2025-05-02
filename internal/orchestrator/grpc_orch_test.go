@@ -6,7 +6,7 @@ import (
 	"testing"
 	"time"
 
-	pb "github.com/vedsatt/calc_prl/api/gen/go"
+	pb "github.com/unethiqual/GO_CALC/api/gen/go"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
 )

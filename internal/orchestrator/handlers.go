@@ -10,7 +10,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/vedsatt/calc_prl/pkg/ast"
+	"github.com/unethiqual/GO_CALC/pkg/ast"
 )
 
 func logsMiddleware(next http.Handler) http.Handler {

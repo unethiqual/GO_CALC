@@ -3,7 +3,7 @@ package ast
 import (
 	"testing"
 
-	"github.com/vedsatt/calc_prl/internal/models"
+	"github.com/unethiqual/GO_CALC/internal/models"
 )
 
 func TestPriority(t *testing.T) {

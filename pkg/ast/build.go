@@ -6,7 +6,7 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/vedsatt/calc_prl/internal/models"
+	"github.com/unethiqual/GO_CALC/internal/models"
 )
 
 var (

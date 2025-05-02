@@ -6,8 +6,8 @@ import (
 	"net"
 	"sync"
 
-	pb "github.com/vedsatt/calc_prl/api/gen/go"
-	"github.com/vedsatt/calc_prl/internal/models"
+	pb "github.com/unethiqual/GO_CALC/api/gen/go"
+	"github.com/unethiqual/GO_CALC/internal/models"
 	"google.golang.org/grpc"
 )
 

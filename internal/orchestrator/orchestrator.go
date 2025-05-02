@@ -7,7 +7,7 @@ import (
 	"regexp"
 	"sync"
 
-	"github.com/vedsatt/calc_prl/pkg/database"
+	"github.com/unethiqual/GO_CALC/pkg/database"
 )
 
 const port = ":8080"

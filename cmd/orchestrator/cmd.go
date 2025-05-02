@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/vedsatt/calc_prl/internal/orchestrator"
+	"github.com/unethiqual/GO_CALC/internal/orchestrator"
 )
 
 func main() {
