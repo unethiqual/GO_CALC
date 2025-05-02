@@ -69,7 +69,7 @@ func LoadConfig() Config {
 			}
 		}
 	}
-	
+
 	if err := scanner.Err(); err != nil {
 		log.Println("Error reading .env file:", err)
 	}

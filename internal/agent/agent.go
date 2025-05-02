@@ -36,5 +36,5 @@ func (a *Agent) Run() {
 		go worker(a.config)
 	}
 
-	select {} // бесконечное ожидание
+	select {}
 }

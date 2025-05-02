@@ -21,7 +21,7 @@ func New() *Orchestrator {
 
 var (
 	base    = database.New()
-	mu      sync.Mutex // Мьютекс для синхронизации доступа к результатам
+	mu      sync.Mutex
 	exprKey = contextKey{"expression"}
 )
 
@@ -61,7 +61,6 @@ func checkId(id string) bool {
 
 func (o *Orchestrator) Run() {
 	StartManager()
-	// запуск сервера для общения с агентом
 	go runGRPC()
 
 	mux := http.NewServeMux()
@@ -69,7 +68,6 @@ func (o *Orchestrator) Run() {
 	expr := http.HandlerFunc(ExpressionHandler)
 	GetData := http.HandlerFunc(GetDataHandler)
 
-	// хендлеры
 	mux.Handle("/api/v1/calculate", logsMiddleware(databaseMiddleware(expr)))
 	mux.Handle("/api/v1/expressions/", logsMiddleware(GetData))
 

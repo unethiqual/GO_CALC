@@ -52,7 +52,6 @@ func databaseMiddleware(next http.Handler) http.Handler {
 		}
 		expression := NewExpression(astRoot)
 
-		// добавляем выражение в базу данных и получаем id
 		expKey := base.PostData()
 		w.WriteHeader(http.StatusCreated)
 		log.Printf("Adding expression to database")
@@ -61,9 +60,7 @@ func databaseMiddleware(next http.Handler) http.Handler {
 		id := RespID{Id: expKey}
 		json.NewEncoder(w).Encode(id)
 
-		// запускаем вычисления в фоновом режиме
 		go func() {
-			// контекст нужен, чтобы передать выражение следующему хендлеру
 			ctx := context.Background()
 			exp := &Expr{ID: expKey, Expr: expression}
 			ctx = context.WithValue(ctx, exprKey, exp)

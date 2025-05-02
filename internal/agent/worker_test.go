@@ -12,10 +12,8 @@ import (
 	"github.com/unethiqual/GO_CALC/internal/models"
 )
 
-// определяем пакетную переменную для базового URL
 var baseURL = "http://localhost:8080"
 
-// изменяем getTask и sendResult для использования baseURL
 func get() (*models.AstNode, bool) {
 	resp, err := http.Get(baseURL + "/internal/task")
 	if err != nil {
@@ -52,7 +50,6 @@ func sendRes(taskID int, result float64) {
 
 // тесты
 func TestGetTask(t *testing.T) {
-	// создаем мок сервер
 	server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		if r.URL.Path != "/internal/task" {
 			t.Errorf("Expected to request '/internal/task', got: %s", r.URL.Path)
@@ -72,10 +69,9 @@ func TestGetTask(t *testing.T) {
 	}))
 	defer server.Close()
 
-	// временно изменяем baseURL на адрес мок сервера
 	oldBaseURL := baseURL
 	baseURL = server.URL
-	defer func() { baseURL = oldBaseURL }() // восстанавливаем значение после теста
+	defer func() { baseURL = oldBaseURL }()
 
 	resp, ok := get()
 	if !ok {
@@ -88,7 +84,6 @@ func TestGetTask(t *testing.T) {
 }
 
 func TestSendResult(t *testing.T) {
-	// создаем мок сервер
 	server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		if r.URL.Path != "/internal/task" {
 			t.Errorf("Expected to request '/internal/task', got: %s", r.URL.Path)
@@ -110,10 +105,9 @@ func TestSendResult(t *testing.T) {
 	}))
 	defer server.Close()
 
-	// временно изменяем baseURL на адрес mock-сервера
 	oldBaseURL := baseURL
 	baseURL = server.URL
-	defer func() { baseURL = oldBaseURL }() // восстанавливаем значение после теста
+	defer func() { baseURL = oldBaseURL }()
 
 	sendRes(1, 5.0)
 }
@@ -142,7 +136,6 @@ func TestCalculate(t *testing.T) {
 }
 
 func TestWorker(t *testing.T) {
-	// Создаем mock-сервер
 	server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		if r.URL.Path != "/internal/task" {
 			t.Errorf("Expected to request '/internal/task', got: %s", r.URL.Path)
@@ -171,11 +164,10 @@ func TestWorker(t *testing.T) {
 	}))
 	defer server.Close()
 
-	// временно изменяем baseURL на адрес мок сервера
 	oldBaseURL := baseURL
 	baseURL = server.URL
-	defer func() { baseURL = oldBaseURL }() // восстанавливаем значение после теста
+	defer func() { baseURL = oldBaseURL }()
 
 	go worker(config.Config{})
-	time.Sleep(5 * time.Second) // Даем время воркеру выполнить свою работу
+	time.Sleep(5 * time.Second)
 }
