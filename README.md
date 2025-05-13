@@ -70,11 +70,6 @@ README.md
 
 ## Требования
 Перед запуском убедитесь, что у вас установлено:
-### Вариант с Docker (рекомендуется)
-- **Docker** версия 24.0 или выше  
-  [Скачать Docker](https://www.docker.com/get-started)
-- **Docker Compose** (обычно входит в Docker)
-### Вариант без Docker
 
 - **Go** версия 1.20+  
   [Скачать Go](https://golang.org/dl/)
@@ -114,12 +109,6 @@ go run ./cmd/orchestrator/cmd.go
 2. **Запустите агента:**
 ```sh
 go run ./cmd/agent/cmd.go
-```
-
-### С помощью Docker:
-**Разверните контейнеры с помощью docker-compose:**
-```sh
-docker-compose up --build
 ```
 
 ## Дизайн системы
